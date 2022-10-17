@@ -41,7 +41,7 @@ public class Beverage extends Food{
 			return 2000;
 		case 0: // case user didn't choice beverage
 			return 0;
-		default: // case user entered wrong number
+		default: // case user entered wrong numbers
 			System.out.println("Selelcted wrong number");
 		}
 		
