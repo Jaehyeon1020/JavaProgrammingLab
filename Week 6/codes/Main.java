@@ -142,6 +142,9 @@ public class Main {
 		printCheck(burger.calculateCost(), beverage.calculateCost(), extra.calculateCost(), beverage.getIfIce()); // print final check
 		
 		scanner.close(); // close Scanner
+		
+		
+		
 	}
 
 }

@@ -176,7 +176,7 @@ public class TripPlanner {
 		
 		JButton yesButton = new JButton("Yes");
 		yesButton.addActionListener(new ActionListener() {
-			// if Yes button clicked : reset all flags and return to start of the program
+			// if Yes button clicked : reset all flags to zero and return to start of the program
 			public void actionPerformed(ActionEvent e) {
 				isInputBaseFare = false;
 				isInputDistanceFare = false;
