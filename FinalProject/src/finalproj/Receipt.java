@@ -5,38 +5,64 @@ package finalproj;
  * stores costs of order and have method for making receipt information
  */
 public class Receipt {
-	private int mainFoodCost; // for storing cost of main food
-	private int sideCost; // for storing cost of side menu
-	private int beverageCost; // for storing cost of beverage
-	private int totalCost; // for storing total cost of this user
+	private Food main; // for storing Food class instance saving main dish
+	private Food side; // for storing Food class instance saving side menu
+	private Food beverage; // for storing Food class instance saving beverage
 	
-	public Receipt(int mainFoodCost, int sideCost, int beverageCost) {
-		setMainFoodCost(mainFoodCost);
-		setSideCost(sideCost);
-		setBeverageCost(beverageCost);
-		totalCost = mainFoodCost + sideCost + beverageCost;
+	public Receipt(Food main, Food side, Food beverage) {
+		setMain(main);
+		setSide(side);
+		setBeverage(beverage);
+	}
+
+	/* setter for main */
+	private void setMain(Food main) {
+		this.main = main;
 	}
 	
-	/* setter for mainFoodCost */
-	public void setMainFoodCost(int mainFoodCost) {
-		this.mainFoodCost = mainFoodCost;
+	/* setter for side */
+	private void setSide(Food side) {
+		this.side = side;
 	}
 	
-	/* setter for sideCost */
-	public void setSideCost(int sideCost) {
-		this.sideCost = sideCost;
+	/* setter for beverage */
+	private void setBeverage(Food beverage) {
+		this.beverage = beverage;
 	}
 	
-	/* setter for beverageCost */
-	public void setBeverageCost(int beverageCost) {
-		this.beverageCost = beverageCost;
+	/* getter for main */
+	public Food getMain() {
+		return this.main;
+	}
+	
+	/* getter for side */
+	public Food getSide() {
+		return this.side;
+	}
+	
+	/* getter for beverage */
+	public Food getbeverageCost() {
+		return this.beverage;
+	}
+	
+	/* get total cost of the order */
+	public int getTotalCost() {
+		return main.getCost() + side.getCost() + beverage.getCost();
 	}
 	
 	/* method for make and get receipt of order */
-	private String getReceipt() {
+	public String getReceipt() {
 		String receipt = "";
 		
-		receipt += "===== RECEIPT =====\n"
-				+ "";
+		receipt += "===== Your Order =====\n"
+				+ "<Main dish>\n"
+				+ main.getInformation()
+				+ "\n<Side dish>\n"
+				+ side.getInformation()
+				+ "\n<Beverage>\n"
+				+ beverage.getInformation()
+				+ "\n";
+		
+		return receipt;
 	}
 }

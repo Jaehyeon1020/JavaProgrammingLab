@@ -8,9 +8,8 @@ public abstract class Food {
 	private int cost; // for storing cost of this food class instance
 	private String foodInfo; // for storing various information of this food class instance
 	
-	public Food(FoodType type, int cost) {
+	public Food(FoodType type) {
 		setType(type);
-		setCost(cost);
 	}
 	
 	/* setter for type of food : class variable type */
@@ -23,6 +22,19 @@ public abstract class Food {
 		this.cost = cost;
 	}
 	
+	/* getter for type */
+	public FoodType getType() {
+		return this.type;
+	}
+	
+	/* getter for cost */
+	public int getCost() {
+		return this.cost;
+	}
+	
 	/* abstract method for saving information of class to foodInfo String */
 	public abstract void setInformation();
+	
+	/* abstract method for get information of class to foodInfo String */
+	public abstract String getInformation();
 }

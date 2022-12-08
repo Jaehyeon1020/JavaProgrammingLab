@@ -1,5 +1,8 @@
 package finalproj;
 
+/**
+ * enum for saving all kinds of food that user can order by this system
+ */
 public enum FoodType {
 	NONE,
 	
