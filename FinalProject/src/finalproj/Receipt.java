@@ -5,63 +5,33 @@ package finalproj;
  * stores costs of order and have method for making receipt information
  */
 public class Receipt {
-	private Food main; // for storing Food class instance saving main dish
-	private Food side; // for storing Food class instance saving side menu
-	private Food beverage; // for storing Food class instance saving beverage
+	private User user;
 	
-	public Receipt(Food main, Food side, Food beverage) {
-		setMain(main);
-		setSide(side);
-		setBeverage(beverage);
-	}
-
-	/* setter for main */
-	private void setMain(Food main) {
-		this.main = main;
-	}
-	
-	/* setter for side */
-	private void setSide(Food side) {
-		this.side = side;
-	}
-	
-	/* setter for beverage */
-	private void setBeverage(Food beverage) {
-		this.beverage = beverage;
-	}
-	
-	/* getter for main */
-	public Food getMain() {
-		return this.main;
-	}
-	
-	/* getter for side */
-	public Food getSide() {
-		return this.side;
-	}
-	
-	/* getter for beverage */
-	public Food getbeverageCost() {
-		return this.beverage;
+	public Receipt(User user) {
+		this.user = user;
 	}
 	
 	/* get total cost of the order */
 	public int getTotalCost() {
-		return main.getCost() + side.getCost() + beverage.getCost();
+		int mainCost = user.getMainFood().getCost(); // cost of user's main menu
+		int sideCost = user.getSideFood().getCost(); // cost of user's side menu
+		int beverageCost = user.getBeverageFood().getCost(); // cost of user's beverage menu
+		
+		return mainCost + sideCost + beverageCost;
 	}
 	
 	/* method for make and get receipt of order */
 	public String getReceipt() {
 		String receipt = "";
 		
-		receipt += "===== Your Order =====\n"
+		receipt += user.getUserInfo() + "\n"
+				+ "===== Your Order =====\n"
 				+ "<Main dish>\n"
-				+ main.getInformation()
-				+ "\n<Side dish>\n"
-				+ side.getInformation()
-				+ "\n<Beverage>\n"
-				+ beverage.getInformation()
-				+ "\n";
+				+ user.getMainFood().getInformation() + "\n"
+				+ "<Side dish>\n"
+				+ user.getSideFood().getInformation() + "\n"
+				+ "<Beverage>\n"
+				+ user.getBeverageFood().getInformation() + "\n";
 		
 		return receipt;
 	}
