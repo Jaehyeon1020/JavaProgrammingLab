@@ -6,7 +6,6 @@ package finalproj;
 public abstract class Food {
 	private FoodType type; // for storing type of this food class instance
 	private int cost; // for storing cost of this food class instance
-	private String foodInfo; // for storing various information of this food class instance
 	
 	public Food(FoodType type) {
 		setType(type);
@@ -31,9 +30,6 @@ public abstract class Food {
 	public int getCost() {
 		return this.cost;
 	}
-	
-	/* abstract method for saving information of class to foodInfo String */
-	public abstract void setInformation();
 	
 	/* abstract method for get information of class to foodInfo String */
 	public abstract String getInformation();

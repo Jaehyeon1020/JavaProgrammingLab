@@ -11,6 +11,11 @@ public class Receipt {
 		this.user = user;
 	}
 	
+	/* getter for variable user */
+	public User getUser() {
+		return this.user;
+	}
+	
 	/* get total cost of the order */
 	public int getTotalCost() {
 		int mainCost = user.getMainFood().getCost(); // cost of user's main menu
@@ -26,11 +31,8 @@ public class Receipt {
 		
 		receipt += user.getUserInfo() + "\n"
 				+ "===== Your Order =====\n"
-				+ "<Main dish>\n"
 				+ user.getMainFood().getInformation() + "\n"
-				+ "<Side dish>\n"
 				+ user.getSideFood().getInformation() + "\n"
-				+ "<Beverage>\n"
 				+ user.getBeverageFood().getInformation() + "\n";
 		
 		return receipt;
