@@ -5,38 +5,34 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JButton;
 
-public class App extends JFrame {
+public class OrderPanel extends JFrame {
 
 	private JPanel contentPane;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					App frame = new App();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	private JPanel panel;
+	private JLabel lblNewLabel;
 
 	/**
 	 * Create the frame.
 	 */
-	public App() {
+	public OrderPanel() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 500, 600);
+		setBounds(100, 100, 700, 700);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		panel = new JPanel();
+		panel.setBounds(6, 6, 688, 660);
+		contentPane.add(panel);
+		
+		lblNewLabel = new JLabel("HIHIHIHIHIHI");
+		panel.add(lblNewLabel);
 	}
 
 }
