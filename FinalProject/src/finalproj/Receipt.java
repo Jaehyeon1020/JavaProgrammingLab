@@ -33,7 +33,9 @@ public class Receipt {
 				+ "===== Your Order =====\n"
 				+ user.getMainFood().getInformation() + "\n"
 				+ user.getSideFood().getInformation() + "\n"
-				+ user.getBeverageFood().getInformation() + "\n";
+				+ user.getBeverageFood().getInformation()
+				+ "=================\n"
+				+ "Total Price : " + getTotalCost();
 		
 		return receipt;
 	}

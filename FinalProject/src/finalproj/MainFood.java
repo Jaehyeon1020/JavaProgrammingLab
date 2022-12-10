@@ -22,12 +22,14 @@ public class MainFood extends Food{
 			super.setCost(15000);
 		} else if (type == FoodType.CHICKEN) {
 			super.setCost(18000);
-		} else if (type == FoodType.GIMBAP) {
+		} else if (type == FoodType.GIMBAP || type == FoodType.RAMEN) {
 			super.setCost(4000);
 		} else if (type == FoodType.JJAJANGMIEN) {
 			super.setCost(6000);
 		} else if (type == FoodType.SUSHI) {
 			super.setCost(10000);
+		} else if (type == FoodType.KIMCHI_JJIGAE) {
+			super.setCost(8000);
 		}
 	}
 	
@@ -36,7 +38,7 @@ public class MainFood extends Food{
 	 */
 	@Override
 	public String getInformation() {
-		information += "<Main Menu>\n"
+		information = "<Main Menu>\n"
 				+ super.getType() + ": " + super.getCost() + " won\n";
 		
 		return information;

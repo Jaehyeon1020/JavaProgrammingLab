@@ -20,6 +20,7 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import javax.swing.JRadioButton;
 import java.awt.Button;
+import javax.swing.JCheckBox;
 
 public class LoginPanel {
 
@@ -36,8 +37,10 @@ public class LoginPanel {
 	private JLabel addressLabel;
 	private JTextField addressTextField;
 	private JButton nextButton;
+	private JCheckBox covidCheckBox;
 	
-	private OrderPanel orderPanel;
+	private MainOrderPane orderPanel;
+	private User user; // user of program: has information of name, phone number, address
 
 	/**
 	 * Launch the application.
@@ -133,6 +136,10 @@ public class LoginPanel {
 		addressTextField.setBounds(206, 525, 273, 39);
 		panel.add(addressTextField);
 		
+		covidCheckBox = new JCheckBox("I'm covid-19 patient");
+		covidCheckBox.setBounds(206, 576, 161, 23);
+		panel.add(covidCheckBox);
+		
 		nextButton = new JButton("Let's go");
 		nextButton.addActionListener(new ActionListener() {
 			/*
@@ -142,7 +149,8 @@ public class LoginPanel {
 				try {
 					checkUserInput(); // check user input
 					
-					orderPanel = new OrderPanel();
+					user = new User(nameTextField.getText(), phoneNumberTextField.getText(), addressTextField.getText(), covidCheckBox.isSelected()); // create user instance
+					orderPanel = new MainOrderPane(user);
 					orderPanel.setVisible(true); // change to new page
 					frame.dispose(); // close the login page
 				} catch (Exception exception) {
@@ -153,6 +161,7 @@ public class LoginPanel {
 		nextButton.setFont(new Font("Lucida Grande", Font.PLAIN, 17));
 		nextButton.setBounds(488, 585, 168, 48);
 		panel.add(nextButton);
+		
 	} /* initialize() end */
 	
 	/**

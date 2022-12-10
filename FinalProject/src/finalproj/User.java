@@ -26,6 +26,21 @@ public class User {
 		this.beverage = beverage;
 	}
 	
+	/* setter for main */
+	public void setMain(Food main) {
+		this.main = main;
+	}
+	
+	/* setter for side */
+	public void setSide(Food side) {
+		this.side = side;
+	}
+	
+	/* setter for beverage */
+	public void setBeverage(Food beverage) {
+		this.beverage = beverage;
+	}
+	
 	/* getter for name */
 	public String getName() {
 		return this.name;
@@ -54,6 +69,11 @@ public class User {
 	/* getter for user selected beverage */
 	public Food getBeverageFood() {
 		return this.beverage;
+	}
+	
+	/* getter for whether user is covid patient */
+	public boolean getIsCovidPatient() {
+		return this.isCovidPatient;
 	}
 	
 	/* make user information String and return it */

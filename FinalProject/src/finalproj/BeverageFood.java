@@ -29,7 +29,7 @@ public class BeverageFood extends Food {
 
 	@Override
 	public String getInformation() {
-		information += "<Beverage>\n"
+		information = "<Beverage>\n"
 				+ super.getType() + ": " + super.getCost() + " won\n";
 		
 		return information;

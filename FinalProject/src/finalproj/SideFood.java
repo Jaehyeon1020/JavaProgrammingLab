@@ -25,7 +25,7 @@ public class SideFood extends Food {
 
 	@Override
 	public String getInformation() {
-		information += "<Side Menu>\n"
+		information = "<Side Menu>\n"
 				+ super.getType() + ": " + super.getCost() + " won\n";
 		
 		return information;
